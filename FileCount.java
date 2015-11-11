@@ -1,4 +1,5 @@
 public class FileCount {
+  
   public final int filesBeingScanned;
 
   public FileCount (int files) {
