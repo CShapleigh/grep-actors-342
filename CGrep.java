@@ -7,6 +7,7 @@ public class CGrep {
 	  for (int i = 1; i < args.length; i++) {
 		  files.add(args[i]);
 	  }
+	  
 
 	  for (final String file : files) {
 	  	// TODO: Start CGREP
