@@ -20,6 +20,11 @@ public class CollectionActor extends UntypedActor{
 				filesReceived++;
 				if (filesReceived == fileCount) {
 					// Print out all the Strings
+					for(final ArrayList<String> line : lines){
+						for(final String lin : line){
+							System.out.println(lin);
+						}
+					}
 				}
 			}
 			

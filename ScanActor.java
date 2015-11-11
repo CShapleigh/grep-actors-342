@@ -28,11 +28,13 @@ public class ScanActor extends UntypedActor {
   private void readFile(String fileName) {
     BufferedReader br;
     try {
+      foundLines.add("CURRENT FILE: " + fileName);
       br = new BufferedReader(new java.io.FileReader(fileName));
       String line;
       int i = 0;
       while ((line = br.readLine()) != null) {
         matchLine(line,i);
+        i++;
       }
       br.close();
     } catch (Exception e)  {
@@ -43,7 +45,7 @@ public class ScanActor extends UntypedActor {
     Pattern pattern = Pattern.compile(regexPattern);
     Matcher matcher = pattern.matcher(line);
     if (matcher.find()) {
-      foundLines.add(lineNum + " " + line);
+      foundLines.add("line: "+lineNum + " -> " + line);
     }
   }
   static public class Configure {
